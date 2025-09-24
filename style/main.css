@@ -1057,3 +1057,82 @@ body {
 
 
 /* page c styles */
+
+
+/* Left column - wider section  */
+.second-left-container {
+    flex: 1;
+}
+
+
+
+
+/* Individual travel package card */
+.c-pack-card {
+    flex: 0 0 auto;
+    width: 400px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 8px;
+}
+
+.c-pack-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.c-pack-card h3 {
+    padding: 1rem 1rem 0.5rem;
+    color: #2c3e50;
+}
+
+.c-pack-card p {
+    padding: 0 1rem;
+    color: #7f8c8d;
+}
+
+.c-pack-card .price {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #27ae60;
+    padding: 0.5rem 1rem;
+}
+
+/* description */
+.left-sidebar-widget {
+    background: #fff;
+    width: 400px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Boxes in the right sidebar  */
+
+.second-right-container {
+    flex: 2;
+    min-height: calc(100vh - 200px);
+    display: flex;
+    justify-content: center;
+
+}
+
+.buy-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+
+}
+
+.card-select {
+    padding: 5px 10px;
+    width: 100px;
+    border-radius: 4px;
+    background-color: #ecf0f1;
+    color: #2c3e50;
+    cursor: pointer;
+}

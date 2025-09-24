@@ -9,35 +9,105 @@
     <link rel="icon" type="image/x-icon" href="/images/logo.png">
 </head>
 
+
+
 <body>
+    <!-- Top section with logo, navigation, and user options -->
+    <header class="main-header">
+        <div class="logo">
+            <h1>Mochileros Sin Fronteras</h1>
+        </div>
 
-    <body>
-        <!-- Top section with logo, navigation, and user options -->
-        <header class="main-header">
-            <div class="logo">
-                <h1>Mochileros Sin Fronteras</h1>
+        <!-- Main menu for site navigation -->
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="#">Experiencias</a></li>
+                <li><a href="#">Consejos</a></li>
+                <li><a href="#">Foro</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+        </nav>
+
+        <!-- Right side of header with logo image and language selector -->
+        <div class="header-controls">
+            <img src="images/logo.png" alt="Website Logo" class="header-logo">
+            <select class="language-select">
+                <option value="es">ES</option>
+                <option value="en">EN</option>
+            </select>
+        </div>
+    </header>
+
+    <!-- Main content area with two-column layout -->
+    <div class="main-container">
+        <!-- left content -->
+        <section class="second-left-container">
+            <!-- Southeast Asia travel package -->
+            <div class="c-pack-card">
+                <img src="images/pack-asia.jpg" alt="Backpacking in Southeast Asia">
+                <h3>Pack Sudeste Asiático</h3>
+                <p>Vietnam & Camboya: buses, hostales y guía de visados</p>
+                <p class="price">$600</p>
             </div>
 
-            <!-- Main menu for site navigation -->
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="#">Experiencias</a></li>
-                    <li><a href="#">Consejos</a></li>
-                    <li><a href="#">Foro</a></li>
-                    <li><a href="#">Contacto</a></li>
-                </ul>
-            </nav>
+            <article class="left-sidebar-widget">
+                <p>asdksaifijdsjndsjgndsnsjnsjogddsjgs
+                    dfsfdss
+                    sd
+                    dsfni
+                </p>
+            </article>
 
-            <!-- Right side of header with logo image and language selector -->
-            <div class="header-controls">
-                <img src="images/logo.png" alt="Website Logo" class="header-logo">
-                <select class="language-select">
-                    <option value="es">ES</option>
-                    <option value="en">EN</option>
-                </select>
+        </section>
+        <!-- right content -->
+        <aside class="second-right-container">
+            <div class="form-container">
+                <h2>Formulario de compra</h2>
+                <form class="buy-form" action="action=">
+                    <!-- Name fields side by side -->
+                    <div class=" form-group">
+                        <input type="text" placeholder="Nombre completo" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" placeholder="Correo electrónico" required>
+                    </div>
+                    <div class="form-group">
+                        <p>tipo de tarjeta</p>
+                        <select class="card-select">
+                            <option value="Visa">Visa</option>
+                            <option value="Mastercard">Mastercard</option>
+                        </select>
+                    </div>
+                    <div class=" form-group">
+                        <input type="numbe" placeholder="Numero de tarjeta" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" placeholder="Nombre del titular de la tarjeta" electrónico required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="fecha-caducidad">Fecha de caducidad </label>
+                        <input type="date" id="fecha-caducidad" name="fecha-caducidad" required>
+                    </div>
+
+                    <div class=" form-group">
+                        <input type="number" placeholder="Código CVV" required>
+                    </div>
+
+                </form>
             </div>
-        </header>
-    </body>
+
+
+        </aside>
+    </div>
+
+
+
+
+
+    </div>
+
+</body>
 
 </html>
