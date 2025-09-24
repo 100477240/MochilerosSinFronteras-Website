@@ -1,12 +1,316 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mochileros Sin Fronteras - Home</title> <!-- Change this for each page -->
+    <title>Mochileros Sin Fronteras - Sesion iniciada</title> <!-- Change this for each page -->
     <link rel="stylesheet" href="style/main.css">
+    <link rel="icon" type="image/x-icon" href="/images/logo.png">
 </head>
+
 <body>
-    <h1>Hello World! This is the Homepage.</h1> <!-- Change this for each page -->
+    <!-- Top section with logo, navigation, and user options -->
+    <header class="main-header">
+        <div class="logo">
+            <h1>Mochileros Sin Fronteras</h1>
+        </div>
+
+        <!-- Main menu for site navigation -->
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="#">Experiencias</a></li>
+                <li><a href="#">Consejos</a></li>
+                <li><a href="#">Foro</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+        </nav>
+
+        <!-- Right side of header with logo image and language selector -->
+        <div class="header-controls">
+            <img src="images/logo.png" alt="Website Logo" class="header-logo">
+            <select class="language-select">
+                <option value="es">ES</option>
+                <option value="en">EN</option>
+            </select>
+        </div>
+    </header>
+
+    <!-- Main content area with two-column layout -->
+    <div class="main-container">
+        <!-- Left column (wider) showing travel experiences -->
+        <div class="left-container">
+            <!-- Grid of travel experience cards shared by community members -->
+            <section class="experiences-grid">
+                <h2>Experiencias de la comunidad mochilera</h2>
+                <div class="grid-container">
+                    <!-- Nepal hotel experience card -->
+                    <article class="experience-card">
+                        <img src="images/exp-nepal.jpg" alt="Hotel in Nepal">
+                        <h3>Hotel en Kathmandú</h3>
+                        <a href="version_a.html" class="view-more">Ver más</a>
+                        <button class="like-btn">♥</button>
+                    </article>
+
+                    <!-- Vietnam motorbike route card -->
+                    <article class="experience-card">
+                        <img src="images/exp-vietnam.jpg" alt="Vietnam motorbike route">
+                        <h3>Vietnam: ruta en moto</h3>
+                        <a href="version_a.html" class="view-more">Ver más</a>
+                        <button class="like-btn">♥</button>
+                    </article>
+
+                    <!-- African backpacking experience card -->
+                    <article class="experience-card">
+                        <img src="images/exp-africa.jpg" alt="Backpacking in Africa">
+                        <h3>Sudáfrica en bus</h3>
+                        <a href="version_a.html" class="view-more">Ver más</a>
+                        <button class="like-btn">♥</button>
+                    </article>
+
+                    <!-- Peru trekking adventure card -->
+                    <article class="experience-card">
+                        <img src="images/exp-peru.jpg" alt="Trekking in Peru">
+                        <h3>Trekking en Perú</h3>
+                        <a href="version_a.html" class="view-more">Ver más</a>
+                        <button class="like-btn">♥</button>
+                    </article>
+
+                    <!-- India visa information card -->
+                    <article class="experience-card">
+                        <img src="images/exp-india.jpg" alt="Visa for India">
+                        <h3>Visado para India</h3>
+                        <a href="version_a.html" class="view-more">Ver más</a>
+                        <button class="like-btn">♥</button>
+                    </article>
+
+                    <!-- Tanzania safari experience card -->
+                    <article class="experience-card">
+                        <img src="images/exp-tanzania.jpg" alt="Safari in Tanzania">
+                        <h3>Safari en Tanzania</h3>
+                        <a href="version_a.html" class="view-more">Ver más</a>
+                        <button class="like-btn">♥</button>
+                    </article>
+                </div>
+            </section>
+        </div>
+
+        <!-- Right sidebar with user tools and helpful information -->
+        <aside class="sidebar">
+            <!-- User photo and name -->
+            <div class="sidebar-widget">
+                <h3>Nombre de Usuario</h3>
+                <div class="user-controls">
+                    <img src="images/profile-picture.png" alt="Profile picture" class="user-logo">
+                    <label> <a href="index.html" class="log-out-button">Cerrar sesión</a></label>
+                </div>
+            </div>
+
+
+            <!-- Search for experiencies -->
+            <div class="sidebar-widget">
+                <h3>Busca experiencias</h3>
+                <div class=search-form>
+                    <form class="checkbox-experiences">
+                        <div>
+                            <input type="checkbox" id="continent1" name="continent1" value="Asia">
+                            <label for="continent1"> Asia </label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="continent2" name="continent3" value="Europa">
+                            <label for="continent2"> Europa </label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="continent3" name="continent3" value="Oceanía">
+                            <label for="continent3"> Oceanía </label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="continent4" name="continent4" value="América">
+                            <label for="continent4"> América </label>
+                        </div>
+                    </form>
+                    <div class="search-bar">
+                        <img src="/images/lupa.png" alt="buscar-icono" class="search-icon">
+                        <input type="text" id="search-bar" placeholder="buscar" required>
+
+                    </div>
+                </div>
+
+
+
+
+            </div>
+
+            <!-- Last advice -->
+            <div class="sidebar-widget">
+                <h3>Últimos consejos</h3>
+                <ul class="tips-list">
+                    <li><a href="#">Transporte económico entre ciudades</a></li>
+                    <li><a href="#">Como mantener la salud en los viajes</a></li>
+                    <li><a href="#"> Evitar robos en rutas concurridas</a></li>
+                    <li><a href="#">Elementos esenciales en la mochila</a></li>
+                </ul>
+                <h3>Tienes algún consejo?</h3>
+                <form class="login-form">
+                    <input type="text" placeholder="Título de consejo" required>
+                    <input type="password" placeholder="Escribe aquí tu consejo" required>
+                    <button href="version_b.html" class="send-button">Enviar</a>
+                </form>
+            </div>
+
+            <!--calendar-->
+            <div class="sidebar-widget">
+                <div class="calendar">
+                    <div class="month">
+                        <h4>Septiembre 2025</h4>
+                    </div>
+                    <div class="week-days">
+                        <div>M</div>
+                        <div>Tu</div>
+                        <div>W</div>
+                        <div>Th</div>
+                        <div>F</div>
+                        <div>Sa</div>
+                        <div>Su</div>
+                    </div>
+
+                    <div class="days">
+                        <div>1</div>
+                        <div>2</div>
+                        <div>3</div>
+                        <div>4</div>
+                        <div>5</div>
+                        <div>6</div>
+                        <div>7</div>
+                        <div>8</div>
+                        <div>9</div>
+                        <div>10</div>
+                        <div>11</div>
+                        <div>12</div>
+                        <div>13</div>
+                        <div>14</div>
+                        <div>15</div>
+                        <div>16</div>
+                        <div>17</div>
+                        <div>18</div>
+                        <div>19</div>
+                        <div>20</div>
+                        <div>21</div>
+                        <div>22</div>
+                        <div>23</div>
+                        <div>24</div>
+                        <div>25</div>
+                        <div>26</div>
+                        <div>27</div>
+                        <div>28</div>
+                        <div>29</div>
+                        <div>30</div>
+
+                    </div>
+                </div>
+            </div>
+
+    </div>
+    </aside>
+    </div>
+
+    <!-- Additional content sections below the main two-column layout -->
+    <main>
+        <!-- Promotional banner with key message -->
+        <section class="hero-banner">
+            <div class="banner-content">
+                <h2>Comparte y descubre viajes mochileros de larga distancia</h2>
+            </div>
+        </section>
+
+        <!-- Carousel of recommended travel packages -->
+        <section class="packs-carousel">
+            <h2>Packs de viaje recomendados</h2>
+            <div class="carousel-container">
+                <button class="carousel-button prev">&#10094;</button> <!-- Left arrow -->
+                <div class="carousel">
+                    <!-- Southeast Asia travel package -->
+                    <div class="pack-card">
+                        <img src="images/pack-asia.jpg" alt="Backpacking in Southeast Asia">
+                        <h3>Pack Sudeste Asiático</h3>
+                        <p>Vietnam & Camboya: buses, hostales y guía de visados</p>
+                        <p class="price">$600</p>
+                        <a href="version_c.html" class="buy-button">Comprar</a>
+                    </div>
+
+                    <!-- Peru trekking package -->
+                    <div class="pack-card">
+                        <img src="images/pack-peru.jpg" alt="Trekking in Peru">
+                        <h3>Pack Trekking Perú</h3>
+                        <p>Camino Inca y Machu Picchu con alojamiento y guías locales.</p>
+                        <p class="price">$550</p>
+                        <a href="version_c.html" class="buy-button">Comprar</a>
+                    </div>
+
+                    <!-- European interrail package -->
+                    <div class="pack-card">
+                        <img src="images/pack-europe.jpg" alt="Interrail in Europe">
+                        <h3>Pack Interrail Europa</h3>
+                        <p>Pase de tren por 5 países, albergues y mapas de ciudades.</p>
+                        <p class="price">$800</p>
+                        <a href="version_c.html" class="buy-button">Comprar</a>
+                    </div>
+                </div>
+                <button class="carousel-button next">&#10095;</button> <!-- Right arrow -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer with links, social media, and newsletter signup -->
+    <footer class="main-footer">
+        <div class="footer-content">
+            <!-- Copyright information -->
+            <p class="copyright">&copy; 2025 Mochileros Sin Fronteras. Todos los derechos reservados.</p>
+
+            <!-- Footer navigation links -->
+            <nav class="footer-links">
+                <a href="#">Sobre nosotros</a>
+                <a href="#">Política de privacidad</a>
+                <a href="#">Términos de servicio</a>
+                <a href="#">Ayuda</a>
+                <a href="#">Contacto</a>
+            </nav>
+
+            <!-- Social media icons -->
+            <div class="social-icons">
+                <a href="#" aria-label="Instagram">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                    </svg>
+                </a>
+                <a href="#" aria-label="TikTok">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z" />
+                    </svg>
+                </a>
+                <a href="#" aria-label="YouTube">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z" />
+                    </svg>
+                </a>
+            </div>
+
+            <!-- Newsletter subscription form -->
+            <form class="newsletter-form">
+                <label for="newsletter-email">Suscríbete a nuestra newsletter:</label>
+                <div class="newsletter-input-group">
+                    <input type="email" id="newsletter-email" placeholder="Tu email" required>
+                    <button type="submit">Suscribir</button>
+                </div>
+            </form>
+        </div>
+    </footer>
+
+
 </body>
+
 </html>
