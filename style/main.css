@@ -777,29 +777,35 @@ body {
 /* Username controls */
 .user-controls {
     display: flex;
-    align-items: center;
-    gap: 15px;
+    gap: 1rem;
 }
 
-.user-logo {
+.user-controls img {
     height: 40px;
     width: auto;
 }
 
-.log-out-button {
-    background-color: #ae2727;
+.user-controls button {
+    background-color: #cc3434;
     color: white;
-    padding: 10px;
+    padding: 0.75rem 1.5rem;
     text-align: center;
+    border: None;
     border-radius: 4px;
-    text-decoration: none;
     font-weight: bold;
-    margin-top: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-.log-out-button:hover {
+
+.user-controls button:hover {
     background-color: #962121;
 }
+
+.user-controls button:active {
+    background-color: #cc3434;
+}
+
 
 /*styles for search experiences*/
 .search-form {
@@ -872,19 +878,24 @@ body {
     color: #7f8c8d;
 }
 
-.send-button {
+.login-form button {
     background-color: #27ae60;
     color: white;
     padding: 10px;
     text-align: center;
+    border: none;
     border-radius: 4px;
     text-decoration: none;
     font-weight: bold;
     margin-top: 0.5rem;
 }
 
-.send-button:hover {
+.login-form button:hover {
     background-color: #219653;
+}
+
+.login-form button:active {
+    background-color: #27ae60;
 }
 
 /*Calendar styles*/
@@ -916,6 +927,10 @@ body {
 .days div:hover {
     background-color: #f0f0f0;
     cursor: pointer;
+}
+
+.days div:active {
+    background-color: #eee;
 }
 
 /* Make the site work well on tablets and smaller screens */
@@ -1071,7 +1086,7 @@ body {
 .c-pack-card {
     flex: 0 0 auto;
     width: 400px;
-    background: #f8f9fa;
+    background: #ffffff;
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -1109,6 +1124,12 @@ body {
     margin-bottom: 1.5rem;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+
+}
+
+.left-sidebar-widget h5 {
+    padding-bottom: 1rem;
 }
 
 /* Boxes in the right sidebar  */
@@ -1130,7 +1151,7 @@ body {
 
 .card-select {
     padding: 5px 10px;
-    width: 100px;
+    width: 120px;
     border-radius: 4px;
     background-color: #ecf0f1;
     color: #2c3e50;
@@ -1142,13 +1163,14 @@ body {
 
 }
 
-.buy-pack-button {
+.buy-form .boton-comprar {
     display: block;
     background-color: #3498db;
     color: white;
     text-align: center;
     padding: 10px;
     margin: 1rem;
+    border: none;
     border-radius: 5px;
     text-decoration: none;
     font-weight: bold;
@@ -1156,17 +1178,22 @@ body {
 }
 
 
-.buy-pack-button:hover {
+.buy-form .boton-comprar:hover {
     background-color: #2980b9;
 }
 
+.buy-form .boton-comprar:active {
+    background-color: #3498db;
+}
 
-.erase-button {
+
+.buy-form .boton-borrar {
     display: block;
     background-color: #ae2727;
     color: white;
     text-align: center;
     padding: 10px;
+    border: none;
     margin: 1rem;
     border-radius: 5px;
     text-decoration: none;
@@ -1175,6 +1202,151 @@ body {
 }
 
 
-.erase-button:hover {
+.buy-form .boton-borrar:hover {
     background-color: #962121;
+}
+
+.buy-form .boton-comprar:active {
+    background-color: #ae2727;
+}
+
+/* Make the site work well on tablets and smaller screens */
+
+/* Tablet size adjustments */
+@media (max-width: 768px) {
+
+    /* Stack header elements vertically on tablets */
+    .main-header {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    .main-nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem;
+    }
+
+    .main-nav li {
+        margin: 0 5px;
+    }
+
+    /* Switch to single column layout on tablets */
+    .main-container {
+        flex-direction: column;
+    }
+
+    .second-left-container,
+    .second-right-container {
+        max-width: 90%;
+        margin: 0 auto;
+    }
+
+    /* buttons: vertical alignment */
+    .buy-form {
+        width: 100%;
+        padding: 1rem;
+    }
+
+    .buy-erase-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .buy-erase-buttons button {
+        width: 100%
+    }
+
+    /* Adjust footer layout for tablets */
+    .footer-content {
+        gap: 1rem;
+    }
+
+    .footer-links {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .newsletter-input-group {
+        flex-direction: column;
+    }
+}
+
+/* Mobile phone size adjustments */
+@media (max-width: 600px) {
+
+    /* Simplify header for mobile */
+    .logo h1 {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .header-controls {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .main-container {
+        flex-direction: column;
+        gap: 1rem;
+
+    }
+
+    .buy-form input,
+    .buy-form select {
+        width: 100%;
+        font-size: 1rem;
+        padding: 0.8rem;
+    }
+
+    .form-container h2 {
+        font-size: 1.4rem;
+        text-align: center;
+    }
+
+    .buy-erase-buttons button {
+        font-size: 0.9rem;
+        padding: 0.9rem
+    }
+
+    .sidebar-widget {
+        padding: 1rem
+    }
+
+    /* Adjust footer for mobile */
+    .footer-content {
+        padding: 0 1rem;
+    }
+
+    .social-icons {
+        justify-content: center;
+    }
+
+    .newsletter-form {
+        width: 100%;
+    }
+}
+
+/* Extra adjustments for very small phones */
+@media (max-width: 400px) {
+    .banner-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .buy-erase-buttons button {
+        font-size: 0.85rem;
+        padding: 0.7rem;
+    }
+
+    .pack-card {
+        width: 250px;
+    }
 }
