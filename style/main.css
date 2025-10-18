@@ -1048,6 +1048,45 @@ body {
     }
 }
 
+/* User profile section styles */
+.user-profile-section {
+    padding: 1rem;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.user-profile-picture {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 0.5rem;
+}
+
+.user-greeting {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin: 0.5rem 0;
+    color: #333;
+}
+
+.logout-button {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: #e74c3c;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.logout-button:hover {
+    background-color: #c0392b;
+}
+
+
 /* Extra small devices (400px and below) */
 @media (max-width: 400px) {
     .logo h1 {

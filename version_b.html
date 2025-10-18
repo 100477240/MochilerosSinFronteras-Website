@@ -124,12 +124,13 @@
 
         <!-- Right sidebar with user tools and helpful information -->
         <aside class="sidebar">
-            <!-- User photo and name -->
+            <!-- User photo and name with profile and logout -->
             <div class="sidebar-widget">
-                <h3>Nombre de Usuario</h3>
-                <div class="user-controls">
-                    <img src="images/profile-picture.png" alt="Profile picture">
-                    <button type="submit"> Cerrar sesión </button>
+                <div class="user-profile-section">
+                    <img src="images/profile-picture.png" alt="User profile" class="user-profile-picture">
+                    <h3 class="user-greeting">¡Hola, Usuario!</h3>
+                    <p class="user-name">Nombre Completo</p>
+                    <a href="#" class="logout-button">Cerrar sesión</a>
                 </div>
             </div>
 
@@ -285,6 +286,7 @@
     </footer>
 
     <script src="script/carousel.js"></script>
+    <script src="script/auth.js"></script>
     
 </body>
 
