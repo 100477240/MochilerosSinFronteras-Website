@@ -1,7 +1,7 @@
 // auth.js - Authentication and session management
 
 // Initialize authentication system when DOM is loaded
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     initializeAuth();
 });
 
@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
 function initializeAuth() {
     // Check which page we're on and initialize accordingly
     const currentPage = window.location.pathname.split('/').pop();
-    
+
     if (currentPage === 'index.html' || currentPage === '') {
         setupLoginForm();
     } else if (currentPage === 'version_b.html') {
@@ -26,16 +26,16 @@ function initializeAuth() {
 function setupLoginForm() {
     const loginButton = document.querySelector('.login-button');
     const loginForm = document.querySelector('.login-form');
-    
+
     if (loginButton && loginForm) {
         // Prevent default link behavior
-        loginButton.addEventListener('click', function(event) {
+        loginButton.addEventListener('click', function (event) {
             event.preventDefault();
             handleLogin();
         });
-        
+
         // Also handle form submission (Enter key)
-        loginForm.addEventListener('submit', function(event) {
+        loginForm.addEventListener('submit', function (event) {
             event.preventDefault();
             handleLogin();
         });
@@ -47,27 +47,27 @@ function handleLogin() {
     const usernameInput = document.querySelector('.login-form input[type="text"]');
     const passwordInput = document.querySelector('.login-form input[type="password"]');
     const rememberCheckbox = document.querySelector('.login-form input[type="checkbox"]');
-    
+
     if (!usernameInput || !passwordInput) {
         console.error('Login form inputs not found');
         return;
     }
-    
+
     const username = usernameInput.value.trim();
     const password = passwordInput.value;
     const rememberMe = rememberCheckbox ? rememberCheckbox.checked : false;
-    
+
     // Validate inputs
     if (username === '' || password === '') {
         showErrorPopup('Por favor, completa todos los campos.');
         return;
     }
-    
+
     // Check credentials against stored users
     if (validateCredentials(username, password)) {
         // Successful login
         createSession(username, rememberMe);
-        
+
         // Redirect to logged-in page
         window.location.href = 'version_b.html';
     } else {
@@ -79,10 +79,10 @@ function handleLogin() {
 function validateCredentials(username, password) {
     // Get registered users from localStorage
     const users = JSON.parse(localStorage.getItem('registeredUsers')) || [];
-    
+
     // Find user with matching credentials
     const user = users.find(u => u.username === username && u.password === password);
-    
+
     // For testing purposes, also accept default test account
     if (username === 'testuser' && password === 'Test1234!') {
         // Create test user if it doesn't exist
@@ -100,7 +100,7 @@ function validateCredentials(username, password) {
         }
         return true;
     }
-    
+
     return user !== undefined;
 }
 
@@ -108,7 +108,7 @@ function createSession(username, rememberMe) {
     // Get user data
     const users = JSON.parse(localStorage.getItem('registeredUsers')) || [];
     const user = users.find(u => u.username === username);
-    
+
     // Create session object
     const session = {
         username: username,
@@ -119,7 +119,7 @@ function createSession(username, rememberMe) {
         loginTime: new Date().toISOString(),
         rememberMe: rememberMe
     };
-    
+
     // Store session
     if (rememberMe) {
         // Store in localStorage (persistent)
@@ -142,7 +142,7 @@ function showErrorPopup(message) {
 function checkSession() {
     // Check for active session
     const session = getCurrentSession();
-    
+
     if (!session) {
         // No active session - redirect to login
         window.alert('Debes iniciar sesión para acceder a esta página.');
@@ -153,34 +153,34 @@ function checkSession() {
 function getCurrentSession() {
     // Check both localStorage and sessionStorage
     let session = localStorage.getItem('currentSession');
-    
+
     if (!session) {
         session = sessionStorage.getItem('currentSession');
     }
-    
+
     return session ? JSON.parse(session) : null;
 }
 
 function displayUserProfile() {
     const session = getCurrentSession();
-    
+
     if (!session) {
         return;
     }
-    
+
     // Update user greeting in the page
     const userGreeting = document.querySelector('.user-greeting');
     if (userGreeting) {
         userGreeting.textContent = `¡Hola, ${session.name}!`;
     }
-    
+
     // Update profile picture if exists
     const profilePicture = document.querySelector('.user-profile-picture');
     if (profilePicture && session.profilePicture) {
         profilePicture.src = session.profilePicture;
         profilePicture.alt = `${session.name} ${session.lastName}`;
     }
-    
+
     // Update any other user-specific elements
     const userNameElements = document.querySelectorAll('.user-name');
     userNameElements.forEach(element => {
@@ -194,9 +194,9 @@ function displayUserProfile() {
 
 function setupLogout() {
     const logoutButton = document.querySelector('.logout-button');
-    
+
     if (logoutButton) {
-        logoutButton.addEventListener('click', function(event) {
+        logoutButton.addEventListener('click', function (event) {
             event.preventDefault();
             handleLogout();
         });
@@ -206,11 +206,11 @@ function setupLogout() {
 function handleLogout() {
     // Show confirmation popup
     const confirmed = window.confirm('¿Estás seguro de que deseas cerrar sesión?');
-    
+
     if (confirmed) {
         // Clear session data
         clearSession();
-        
+
         // Redirect to homepage
         window.location.href = 'index.html';
     }
