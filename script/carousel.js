@@ -6,6 +6,7 @@ const travelPackages = [
         id: 1,
         name: "Pack Sudeste Asiático",
         description: "Vietnam, Camboya: buses, hostales y guía de visados",
+        longDescription: "Sumérgete en la aventura del sudeste Asiático con nuestro pack esencial para mochileros en Vietnam y Camboya. Este paquete te proporciona la base para un viaje inolvidable, diseñado para explorar a tu ritmo y con un presupuesto ajustado. Perfecto para mochileros que buscan la libertad de viajar de forma independiente, pero con las herramientas básicas de logística y la seguridad de tener alojamiento y documentación cubiertos. ¡Prepárate para la inmersión cultural, los templos milenarios y los paisajes que cortan la respiración!",
         price: "600€",
         image: "images/pack-asia.jpg",
         alt: "Backpacking in Southeast Asia"
@@ -14,6 +15,7 @@ const travelPackages = [
         id: 2,
         name: "Pack Ruta Inca",
         description: "Perú, Bolivia: trekking, alojamiento y transporte incluido",
+        longDescription: "Descubre la majestuosidad de los Andes con nuestro pack Ruta Inca. Recorre el legendario Camino Inca hasta Machu Picchu, explora el lago Titicaca y sumérgete en la rica cultura de Perú y Bolivia. Este paquete incluye guías expertos, alojamiento en refugios de montaña y transporte entre las principales ciudades. Ideal para aventureros que buscan experiencias auténticas en altitudes extremas y paisajes de montaña inolvidables.",
         price: "850€",
         image: "images/pack-inca.jpg",
         alt: "Inca Trail backpacking package"
@@ -22,6 +24,7 @@ const travelPackages = [
         id: 3,
         name: "Pack Europa del Este",
         description: "Polonia, República Checa, Hungría: trenes y hostales",
+        longDescription: "Explora la fascinante historia y cultura de Europa del Este con nuestro pack diseñado para mochileros. Visita Cracovia, Praga y Budapest con pases de tren incluidos y alojamiento en hostales céntricos. Descubre castillos medievales, arquitectura gótica y la vibrante vida nocturna de estas capitales. Perfecto para quienes buscan cultura, historia y una excelente relación calidad-precio en el corazón de Europa.",
         price: "720€",
         image: "images/pack-europe.jpg",
         alt: "Eastern Europe backpacking"
@@ -30,6 +33,7 @@ const travelPackages = [
         id: 4,
         name: "Pack África Oriental",
         description: "Tanzania, Kenia: safaris, camping y guías locales",
+        longDescription: "Vive la aventura africana definitiva con nuestro pack de safari en África Oriental. Explora los parques nacionales del Serengeti y Masai Mara, presencia la Gran Migración y acampa bajo las estrellas africanas. Incluye safaris guiados, camping en plena naturaleza, transporte 4x4 y guías locales expertos. Una experiencia única para los amantes de la vida salvaje y los paisajes épicos.",
         price: "1200€",
         image: "images/exp-africa.jpg",
         alt: "East Africa adventure package"
@@ -38,6 +42,7 @@ const travelPackages = [
         id: 5,
         name: "Pack Patagonia",
         description: "Argentina, Chile: refugios de montaña y trekkings épicos",
+        longDescription: "Conquista los paisajes más dramáticos del planeta con nuestro pack Patagonia. Recorre el Parque Nacional Torres del Paine, glaciares milenarios y montañas imponentes en la frontera argentino-chilena. Incluye alojamiento en refugios de montaña, trekkings guiados y transporte entre los principales puntos de interés. Ideal para mochileros experimentados que buscan naturaleza salvaje y desafíos físicos memorables.",
         price: "950€",
         image: "images/pack-patagonia.jpg",
         alt: "Patagonia trekking package"
@@ -173,9 +178,49 @@ function setupBuyButton() {
     }
 }
 
-// Pause auto-rotate when user hovers over carousel
+// Pause auto-rotate when user hovers over carousel (desktop)
 const carouselContainer = document.querySelector('.carousel-container');
 if (carouselContainer) {
     carouselContainer.addEventListener('mouseenter', stopAutoRotate);
     carouselContainer.addEventListener('mouseleave', startAutoRotate);
+    
+    // Add touch/swipe support for mobile devices
+    addTouchSupport(carouselContainer);
+}
+
+// ============================================
+// MOBILE TOUCH/SWIPE SUPPORT
+// ============================================
+
+function addTouchSupport(element) {
+    let touchStartX = 0;
+    let touchEndX = 0;
+    
+    element.addEventListener('touchstart', function(e) {
+        touchStartX = e.changedTouches[0].screenX;
+        stopAutoRotate(); // Pause auto-rotate when user touches
+    }, { passive: true });
+    
+    element.addEventListener('touchend', function(e) {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+        startAutoRotate(); // Resume auto-rotate after swipe
+    }, { passive: true });
+    
+    function handleSwipe() {
+        const swipeThreshold = 50; // Minimum distance for swipe
+        const swipeDistance = touchEndX - touchStartX;
+        
+        if (Math.abs(swipeDistance) < swipeThreshold) {
+            return; // Not a swipe, just a tap
+        }
+        
+        if (swipeDistance > 0) {
+            // Swiped right - go to previous
+            prevPackage();
+        } else {
+            // Swiped left - go to next
+            nextPackage();
+        }
+    }
 }

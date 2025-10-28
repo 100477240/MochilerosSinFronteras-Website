@@ -5,7 +5,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mochileros Sin Fronteras - Home</title> <!-- Change this for each page -->
-    <link rel="stylesheet" href="style/main.css">
+    
+    <!-- Organized CSS Files -->
+    <link rel="stylesheet" href="style/reset.css">
+    <link rel="stylesheet" href="style/variables.css">
+    <link rel="stylesheet" href="style/base.css">
+    <link rel="stylesheet" href="style/header.css">
+    <link rel="stylesheet" href="style/hero.css">
+    <link rel="stylesheet" href="style/carousel.css">
+    <link rel="stylesheet" href="style/cards.css">
+    <link rel="stylesheet" href="style/sidebar.css">
+    <link rel="stylesheet" href="style/forms.css">
+    <link rel="stylesheet" href="style/footer.css">
+    <link rel="stylesheet" href="style/calendar.css">
+    <link rel="stylesheet" href="style/user.css">
+    <link rel="stylesheet" href="style/responsive.css">
+    
     <link rel="icon" type="image/x-icon" href="/images/logo.png">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
@@ -70,51 +85,61 @@
             <div class="form-container">
                 <h2>Formulario de compra</h2>
                 <form class="buy-form">
-                    <!-- Name fields side by side -->
-                    <div class=" form-group">
-                        <input type="text" placeholder="Nombre completo" required>
-                    </div>
+                    <!-- Full name -->
                     <div class="form-group">
-                        <input type="email" placeholder="Correo electrónico" required>
+                        <input type="text" id="full-name" placeholder="Nombre completo" required>
                     </div>
+                    
+                    <!-- Email -->
                     <div class="form-group">
-                        <p>tipo de tarjeta</p>
-                        <select class="card-select">
+                        <input type="email" id="email" placeholder="Correo electrónico" required>
+                    </div>
+                    
+                    <!-- Card type -->
+                    <div class="form-group">
+                        <label for="card-type">Tipo de tarjeta *</label>
+                        <select id="card-type" class="card-select" required>
+                            <option value="">Seleccionar tipo...</option>
                             <option value="Visa">Visa</option>
                             <option value="Mastercard">Mastercard</option>
+                            <option value="American Express">American Express</option>
                         </select>
                     </div>
-                    <div class=" form-group">
-                        <input type="number" placeholder="Numero de tarjeta" required>
-                    </div>
+                    
+                    <!-- Card number -->
                     <div class="form-group">
-                        <input type="text" placeholder="Nombre del titular de la tarjeta" required>
+                        <input type="text" id="card-number" placeholder="Número de tarjeta" maxlength="23" required>
+                    </div>
+                    
+                    <!-- Cardholder name -->
+                    <div class="form-group">
+                        <input type="text" id="cardholder-name" placeholder="Nombre del titular de la tarjeta" required>
                     </div>
 
+                    <!-- Expiration date -->
                     <div class="form-group">
-                        <label for="fecha-caducidad">Fecha de caducidad </label>
+                        <label for="fecha-caducidad">Fecha de caducidad *</label>
                         <input type="date" id="fecha-caducidad" name="fecha-caducidad" required>
                     </div>
 
-                    <div class=" form-group">
-                        <input type="number" placeholder="Código CVV" required>
+                    <!-- CVV -->
+                    <div class="form-group">
+                        <input type="text" id="cvv" placeholder="Código CVV" maxlength="3" pattern="\d{3}" required>
                     </div>
 
-                    <div class=" buy-erase-buttons">
-
+                    <!-- Buttons -->
+                    <div class="buy-erase-buttons">
                         <div class="form-group">
-                            <button class="boton-comprar" type="submit" formaction="index.html">Comprar</button>
+                            <button class="boton-comprar" type="button">Comprar</button>
                         </div>
                         <div class="form-group">
-                            <button class="boton-borrar" type="reset">Borrar</button>
+                            <button class="boton-borrar" type="button">Borrar</button>
                         </div>
                     </div>
-
                 </form>
             </div>
-
-
         </aside>
+
     </div>
 
     <!-- Footer with links, social media, and newsletter signup -->
@@ -165,7 +190,7 @@
         </div>
     </footer>
 
-
+        <script src="script/payment.js"></script>
 </body>
 
 </html>
