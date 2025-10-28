@@ -1,0 +1,70 @@
+/* User Profile and Controls */
+
+/* User profile and logout controls */
+.user-controls {
+    display: flex;
+    gap: var(--spacing-sm);
+}
+
+.user-controls img {
+    height: 40px;
+    width: auto;
+}
+
+.user-controls button {
+    background-color: #cc3434;
+    color: white;
+    padding: 0.75rem var(--spacing-md);
+    text-align: center;
+    border: None;
+    border-radius: var(--radius-sm);
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.user-controls button:hover {
+    background-color: #962121;
+}
+
+.user-controls button:active {
+    background-color: #cc3434;
+}
+
+/* User profile section styles */
+.user-profile-section {
+    padding: var(--spacing-sm);
+    background-color: #f5f5f5;
+    border-radius: var(--radius-md);
+    text-align: center;
+    margin-bottom: var(--spacing-sm);
+}
+
+.user-profile-picture {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: var(--spacing-xs);
+}
+
+.user-greeting {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin: var(--spacing-xs) 0;
+    color: var(--text-dark);
+}
+
+.logout-button {
+    display: inline-block;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    background-color: var(--accent-red);
+    color: white;
+    text-decoration: none;
+    border-radius: var(--radius-sm);
+    transition: background-color 0.3s;
+}
+
+.logout-button:hover {
+    background-color: var(--accent-red-dark);
+}

@@ -1,0 +1,39 @@
+/* Base styles - Typography and body */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+    background-color: var(--bg-light);
+}
+
+/* Main content area that holds the two-column layout */
+.main-container {
+    display: flex;
+    width: 100%;
+    margin: 0 auto;
+    padding: var(--spacing-lg);
+    gap: var(--spacing-lg);
+    align-items: flex-start;
+}
+
+/* Left column takes more space, right sidebar is smaller */
+.left-container {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+}
+
+/* Right sidebar stays visible when scrolling */
+.sidebar {
+    flex: 1;
+    position: sticky;
+    top: var(--spacing-lg);
+    align-self: flex-start;
+}
+
+/* Ensure images are responsive */
+img {
+    max-width: 100%;
+    height: auto;
+}

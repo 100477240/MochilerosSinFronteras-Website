@@ -1,0 +1,64 @@
+/* Carousel Component */
+
+/* Travel packages carousel section */
+.packs-carousel {
+    padding: var(--spacing-lg);
+    background-color: var(--bg-card);
+    text-align: center;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+}
+
+.packs-carousel > h2 {
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+    color: var(--primary-dark);
+    font-size: 1.8rem;
+}
+
+.carousel-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.carousel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 10px 0;
+}
+
+/* Left and right arrows for the carousel */
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(52, 152, 219, 0.9);
+    color: white;
+    border: none;
+    padding: var(--spacing-sm) 1.2rem;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 10;
+    font-size: 1.5rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-button.prev {
+    left: -20px;
+}
+
+.carousel-button.next {
+    right: -20px;
+}
+
+.carousel-button:hover {
+    background-color: var(--primary-dark-blue);
+    transform: translateY(-50%) scale(1.1);
+}

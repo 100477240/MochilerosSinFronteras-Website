@@ -1,0 +1,330 @@
+/* Form Styles */
+
+/* Login form styling */
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.login-form input[type="text"],
+.login-form input[type="password"] {
+    padding: 10px;
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-sm);
+}
+
+.login-form label {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.login-form button {
+    background-color: var(--accent-green);
+    color: white;
+    padding: 10px;
+    text-align: center;
+    border: none;
+    border-radius: var(--radius-sm);
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: var(--spacing-xs);
+}
+
+.login-form button:hover {
+    background-color: var(--accent-green-dark);
+}
+
+.login-form button:active {
+    background-color: var(--accent-green);
+}
+
+.login-button {
+    background-color: var(--accent-green);
+    color: white;
+    padding: 10px;
+    text-align: center;
+    border-radius: var(--radius-sm);
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: var(--spacing-xs);
+}
+
+.login-button:hover {
+    background-color: var(--accent-green-dark);
+}
+
+/* Sign up button styling */
+.register-button {
+    display: block;
+    background-color: var(--primary-blue);
+    color: white;
+    padding: 12px;
+    text-align: center;
+    border-radius: var(--radius-sm);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.register-button:hover {
+    background-color: var(--primary-dark-blue);
+}
+
+/* Registration page specific styles */
+.registration-main {
+    min-height: calc(100vh - 200px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-lg);
+    background-color: #f8f9fa;
+}
+
+.form-container {
+    background: white;
+    padding: var(--spacing-xl);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-xl);
+    width: 100%;
+    max-width: 600px;
+}
+
+.form-container h2 {
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+    color: var(--primary-dark);
+    font-size: 2rem;
+}
+
+.registration-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.form-row {
+    display: flex;
+    gap: var(--spacing-sm);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.form-group label {
+    margin-bottom: var(--spacing-xs);
+    font-weight: 500;
+    color: var(--primary-dark);
+}
+
+.form-group input {
+    padding: 12px;
+    border: 1px solid var(--border-light);
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+
+.file-upload {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.file-upload input[type="file"] {
+    flex: 1;
+    padding: 8px;
+}
+
+.file-upload span {
+    padding: 8px 12px;
+    background-color: var(--primary-light);
+    border-radius: var(--radius-sm);
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+.checkbox-group {
+    flex-direction: row;
+    align-items: center;
+    gap: var(--spacing-xs);
+}
+
+.checkbox-group input[type="checkbox"] {
+    width: auto;
+    margin: 0;
+}
+
+.checkbox-group label {
+    margin-bottom: 0;
+}
+
+.submit-button {
+    background-color: var(--accent-green);
+    color: white;
+    padding: 15px;
+    text-align: center;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: var(--spacing-sm);
+}
+
+.submit-button:hover {
+    background-color: var(--accent-green-dark);
+}
+
+/* Search experiences by continent */
+.search-form {
+    display: flex;
+    width: fit-content;
+    padding: 0;
+    flex-direction: column;
+    align-items: center;
+}
+
+.checkbox-experiences {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.checkbox-experiences > div {
+    display: inline-flex;
+    gap: 6px;
+    width: 48%;
+}
+
+.search-bar {
+    margin-top: 4px;
+    width: min-content;
+    height: min-content;
+    margin-right: 100px;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-bar input {
+    padding: 0px 19px;
+    box-sizing: border-box;
+    width: 8rem;
+    border: 2px solid gray;
+    border-radius: var(--radius-md);
+    font-size: 1rem;
+}
+
+.search-icon {
+    position: absolute;
+    align-self: center;
+    width: 14px;
+    height: 14px;
+    margin-left: 4px;
+    pointer-events: none;
+}
+
+/* Tips form textarea styles */
+.tip-form textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-sm);
+    font-family: inherit;
+    font-size: 0.9rem;
+    resize: vertical;
+    margin-bottom: var(--spacing-xs);
+}
+
+.tip-form textarea:focus {
+    outline: none;
+    border-color: #4CAF50;
+}
+
+/* Purchase page form */
+.second-left-container {
+    flex: 1;
+}
+
+.second-right-container {
+    flex: 2;
+    min-height: calc(100vh - 200px);
+    display: flex;
+    justify-content: center;
+}
+
+.buy-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.card-select {
+    padding: 5px 10px;
+    width: 120px;
+    border-radius: var(--radius-sm);
+    background-color: var(--primary-light);
+    color: var(--primary-dark);
+    cursor: pointer;
+}
+
+.buy-erase-buttons {
+    display: flex;
+}
+
+.buy-form .boton-comprar {
+    display: block;
+    background-color: var(--primary-blue);
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin: var(--spacing-sm);
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.buy-form .boton-comprar:hover {
+    background-color: var(--primary-dark-blue);
+}
+
+.buy-form .boton-comprar:active {
+    background-color: var(--primary-blue);
+}
+
+.buy-form .boton-borrar {
+    display: block;
+    background-color: #ae2727;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    border: none;
+    margin: var(--spacing-sm);
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.buy-form .boton-borrar:hover {
+    background-color: #962121;
+}
+
+.buy-form .boton-borrar:active {
+    background-color: #ae2727;
+}

@@ -1,0 +1,58 @@
+/* Sidebar Widgets */
+
+/* Boxes in the sidebar for different types of content */
+.sidebar-widget {
+    background: var(--bg-card);
+    padding: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+}
+
+.sidebar-widget h3 {
+    color: var(--primary-dark);
+    margin-bottom: var(--spacing-sm);
+    font-size: 1.2rem;
+}
+
+/* Package description section */
+.left-sidebar-widget {
+    background: var(--bg-card);
+    width: 400px;
+    padding: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+}
+
+.left-sidebar-widget h5 {
+    padding-bottom: var(--spacing-sm);
+}
+
+/* Lists in the sidebar (destinations, tips, meetups) */
+.destinations-list,
+.tips-list,
+.meetups-list {
+    list-style: none;
+}
+
+.destinations-list li,
+.tips-list li,
+.meetups-list li {
+    margin-bottom: var(--spacing-xs);
+    padding-bottom: var(--spacing-xs);
+    border-bottom: 1px solid var(--border-lighter);
+}
+
+.destinations-list a,
+.tips-list a,
+.meetups-list a {
+    color: var(--primary-blue);
+    text-decoration: none;
+}
+
+.destinations-list a:hover,
+.tips-list a:hover,
+.meetups-list a:hover {
+    text-decoration: underline;
+}

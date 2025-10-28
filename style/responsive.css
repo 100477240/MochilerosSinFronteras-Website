@@ -1,0 +1,181 @@
+/* Responsive Design - Media Queries */
+
+/* Tablet breakpoint (768px) */
+@media (max-width: 768px) {
+    .main-container {
+        flex-direction: column;
+        padding: var(--spacing-sm);
+        gap: var(--spacing-sm);
+    }
+    
+    .left-container, 
+    .sidebar {
+        width: 100%;
+        flex: none;
+    }
+    
+    .sidebar {
+        position: static;
+        order: 2;
+    }
+    
+    .left-container {
+        order: 1;
+    }
+
+    .main-header {
+        flex-direction: column;
+        padding: var(--spacing-sm);
+        gap: var(--spacing-sm);
+    }
+    
+    .main-nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: var(--spacing-xs);
+    }
+    
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-sm);
+    }
+    
+    .pack-card {
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+    
+    .carousel-container {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+    
+    .carousel-button {
+        position: static;
+        transform: none;
+        margin: var(--spacing-xs);
+    }
+
+    /* Improve touch targets */
+    a, button, .buy-button, .view-more {
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    /* Improve form inputs for mobile */
+    input, select, textarea {
+        font-size: 16px; /* Prevents zoom on iOS */
+        min-height: 44px;
+    }
+    
+    /* Ensure text is readable */
+    body {
+        font-size: 14px;
+        line-height: 1.4;
+    }
+    
+    h1 { font-size: 1.5rem; }
+    h2 { font-size: 1.3rem; }
+    h3 { font-size: 1.1rem; }
+}
+
+/* Mobile breakpoint (600px) */
+@media (max-width: 600px) {
+    .main-container {
+        padding: var(--spacing-xs);
+    }
+    
+    /* Single column layout */
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Header stack */
+    .header-controls {
+        flex-direction: column;
+        gap: var(--spacing-xs);
+    }
+    
+    .main-nav ul {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+    
+    .main-nav li {
+        margin: 0.25rem 0;
+        width: 100%;
+        text-align: center;
+    }
+    
+    .form-row {
+        flex-direction: column;
+    }
+    
+    .form-group {
+        width: 100%;
+    }
+    
+    .footer-content {
+        padding: 0 var(--spacing-sm);
+    }
+    
+    .footer-links {
+        flex-direction: column;
+        gap: var(--spacing-xs);
+    }
+    
+    .newsletter-input-group {
+        flex-direction: column;
+    }
+    
+    .second-left-container,
+    .second-right-container {
+        width: 100%;
+        max-width: none;
+    }
+    
+    .c-pack-card,
+    .left-sidebar-widget {
+        width: 100%;
+    }
+    
+    .buy-erase-buttons {
+        flex-direction: column;
+        gap: var(--spacing-xs);
+    }
+    
+    .buy-erase-buttons button {
+        width: 100%;
+        margin: 0.25rem 0;
+    }
+}
+
+/* Extra small devices (400px and below) */
+@media (max-width: 400px) {
+    .logo h1 {
+        font-size: 1.3rem;
+        text-align: center;
+    }
+    
+    .hero-banner {
+        height: 30vh;
+    }
+    
+    .banner-content h2 {
+        font-size: 1.3rem;
+        padding: 0 var(--spacing-sm);
+    }
+    
+    .packs-carousel,
+    .experiences-grid {
+        padding: var(--spacing-sm);
+    }
+    
+    .sidebar-widget {
+        padding: var(--spacing-sm);
+    }
+}
